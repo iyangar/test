@@ -82,36 +82,11 @@ paths:
         required: true
       responses:
         200:
-          description: OK, Successful operation
+          description: OK, Successful response
           content:
             application/json:
               schema:
-                title: PhenotypeWithHref
-                type: object
-                properties:
-                  links:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        href:
-                          type: string
-                        rel:
-                          type: string
-                        templated:
-                          type: boolean
-                  id:
-                    type: string
-                  phenotypeGroup:
-                    type: string
-                    enum: [ANTHROPOMETRIC,CARDIOVASCULAR,GLYCEMIC]
-                  description:
-                    type: string
-                  type:
-                    type: string
-                    enum: [DICHOTOMOUS, MULTICHOTOMOUS]
-                  allowedValues:
-                    type: string
+                $ref: '#/components/schemas/Phenotype'
         201:
           description: Created
         401:
@@ -126,9 +101,9 @@ components:
     Phenotype:
       type: object
       properties:
-        id:
+        phid:
           type: string
-          description: generated id of phenotype
+          description: generated phid of phenotype
         phenotypeGroup:
           type: string
           enum: [ANTHROPOMETRIC,CARDIOVASCULAR,GLYCEMIC]
