@@ -12,11 +12,11 @@ import javax.validation.constraints.*;
 /**
  * Phenotype
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-07T15:04:26.811+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-11T23:43:46.465+01:00[Europe/London]")
 
 public class Phenotype   {
-  @JsonProperty("id")
-  private String id;
+  @JsonProperty("phid")
+  private String phid;
 
   /**
    * phenotype group
@@ -94,24 +94,24 @@ public class Phenotype   {
   @JsonProperty("allowedValues")
   private String allowedValues;
 
-  public Phenotype id(String id) {
-    this.id = id;
+  public Phenotype phid(String phid) {
+    this.phid = phid;
     return this;
   }
 
   /**
-   * generated id of phenotype
-   * @return id
+   * generated phid of phenotype
+   * @return phid
   */
-  @ApiModelProperty(value = "generated id of phenotype")
+  @ApiModelProperty(value = "generated phid of phenotype")
 
 
-  public String getId() {
-    return id;
+  public String getPhid() {
+    return phid;
   }
 
-  public void setId(String id) {
-    this.id = id;
+  public void setPhid(String phid) {
+    this.phid = phid;
   }
 
   public Phenotype phenotypeGroup(PhenotypeGroupEnum phenotypeGroup) {
@@ -204,7 +204,7 @@ public class Phenotype   {
       return false;
     }
     Phenotype phenotype = (Phenotype) o;
-    return Objects.equals(this.id, phenotype.id) &&
+    return Objects.equals(this.phid, phenotype.phid) &&
         Objects.equals(this.phenotypeGroup, phenotype.phenotypeGroup) &&
         Objects.equals(this.description, phenotype.description) &&
         Objects.equals(this.type, phenotype.type) &&
@@ -213,7 +213,7 @@ public class Phenotype   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, phenotypeGroup, description, type, allowedValues);
+    return Objects.hash(phid, phenotypeGroup, description, type, allowedValues);
   }
 
   @Override
@@ -221,7 +221,7 @@ public class Phenotype   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Phenotype {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    phid: ").append(toIndentedString(phid)).append("\n");
     sb.append("    phenotypeGroup: ").append(toIndentedString(phenotypeGroup)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
