@@ -6,7 +6,6 @@
 package org.ebi.metadata.api;
 
 import org.ebi.metadata.api.model.Phenotype;
-import org.ebi.metadata.api.model.PhenotypeWithHref;
 import org.ebi.metadata.api.model.PhenotypeWithoutId;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
@@ -28,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-07T15:04:26.811+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-11T23:43:46.465+01:00[Europe/London]")
 
 @Validated
 @Api(value = "phenotypes", description = "the phenotypes API")
@@ -51,7 +50,7 @@ public interface PhenotypesApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    ApiUtil.setExampleResponse(request, "application/json", "{  \"phenotypeGroup\" : \"ANTHROPOMETRIC\",  \"allowedValues\" : \"allowedValues\",  \"description\" : \"description\",  \"id\" : \"id\",  \"type\" : \"DICHOTOMOUS\"}");
+                    ApiUtil.setExampleResponse(request, "application/json", "{  \"phenotypeGroup\" : \"ANTHROPOMETRIC\",  \"allowedValues\" : \"allowedValues\",  \"phid\" : \"phid\",  \"description\" : \"description\",  \"type\" : \"DICHOTOMOUS\"}");
                     break;
                 }
             }
@@ -61,9 +60,9 @@ public interface PhenotypesApi {
     }
 
 
-    @ApiOperation(value = "save phenotype.", nickname = "postPhenotypeEntity", notes = "Store a phenotype of Type2Diabetes.", response = PhenotypeWithHref.class, tags={ "Phenotype Entity", })
+    @ApiOperation(value = "save phenotype.", nickname = "postPhenotypeEntity", notes = "Store a phenotype of Type2Diabetes.", response = Phenotype.class, tags={ "Phenotype Entity", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "OK, Successful operation", response = PhenotypeWithHref.class),
+        @ApiResponse(code = 200, message = "OK, Successful response", response = Phenotype.class),
         @ApiResponse(code = 201, message = "Created"),
         @ApiResponse(code = 401, message = "Unauthorized"),
         @ApiResponse(code = 403, message = "Forbidden"),
@@ -72,11 +71,11 @@ public interface PhenotypesApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    default ResponseEntity<PhenotypeWithHref> postPhenotypeEntity(@ApiParam(value = ""  )  @Valid @RequestBody PhenotypeWithoutId phenotypeWithoutId) {
+    default ResponseEntity<Phenotype> postPhenotypeEntity(@ApiParam(value = ""  )  @Valid @RequestBody PhenotypeWithoutId phenotypeWithoutId) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    ApiUtil.setExampleResponse(request, "application/json", "{  \"phenotypeGroup\" : \"ANTHROPOMETRIC\",  \"allowedValues\" : \"allowedValues\",  \"description\" : \"description\",  \"links\" : [ {    \"templated\" : true,    \"rel\" : \"rel\",    \"href\" : \"href\"  }, {    \"templated\" : true,    \"rel\" : \"rel\",    \"href\" : \"href\"  } ],  \"id\" : \"id\",  \"type\" : \"DICHOTOMOUS\"}");
+                    ApiUtil.setExampleResponse(request, "application/json", "{  \"phenotypeGroup\" : \"ANTHROPOMETRIC\",  \"allowedValues\" : \"allowedValues\",  \"phid\" : \"phid\",  \"description\" : \"description\",  \"type\" : \"DICHOTOMOUS\"}");
                     break;
                 }
             }
