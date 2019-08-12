@@ -12,7 +12,7 @@ import javax.validation.constraints.*;
 /**
  * PhenotypeWithoutId
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-07T15:04:26.811+01:00[Europe/London]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2019-08-11T23:43:46.465+01:00[Europe/London]")
 
 public class PhenotypeWithoutId   {
   /**
